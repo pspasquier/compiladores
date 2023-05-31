@@ -40,8 +40,8 @@ IGNORED_BUNCH [ \n]
 	else return TK_PR_ELSE;
 	while return TK_PR_WHILE;
 	return return TK_PR_RETURN;
-	true return TK_LIT_FALSE;
-	false return TK_LIT_TRUE;
+	true return TK_LIT_TRUE;
+	false return TK_LIT_FALSE;
 	{DIGITS}*"."{DIGITS}+ return TK_LIT_FLOAT;
 	{DIGITS}+ return TK_LIT_INT;
 	{ESPECIAIS} {return yytext[0];}
