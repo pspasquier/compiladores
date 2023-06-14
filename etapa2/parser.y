@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 int yylex(void);
-int yyerror (char const *s);
+void yyerror (char const *s);
 extern int get_line_number();
 
 %}
@@ -34,7 +34,8 @@ extern int get_line_number();
 %%
 
 program
-    : global_declarations
+    :
+    | global_declarations
     ;
 
 global_declarations
@@ -87,9 +88,9 @@ local_variables_declaration
 
 l_local_variables
     : TK_IDENTIFICADOR
-    | TK_IDENTIFICADOR '=' expression
+    | TK_IDENTIFICADOR TK_OC_LE literal
     | l_local_variables ',' TK_IDENTIFICADOR
-    | l_local_variables ',' TK_IDENTIFICADOR '=' expression
+    | l_local_variables ',' TK_IDENTIFICADOR TK_OC_LE literal
     ;
 
 attribuition
@@ -111,8 +112,7 @@ else_statement
     ;
 
 while_statement
-    : TK_PR_WHILE '(' expression ')'
-    | TK_PR_WHILE '(' expression ')' command_block
+    : TK_PR_WHILE '(' expression ')' command_block
     ;
 
 return_operation
@@ -196,6 +196,6 @@ literal
 
 %%
 
-int yyerror(char const *s) {
+void yyerror(char const *s) {
   printf("[%d]: %s\n", get_line_number(), s);
 }

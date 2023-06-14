@@ -11,7 +11,7 @@ int get_line_number()
 DIGITS [0-9]
 SPECIALS  [-!*/%+<>{}()=,;]
 IDENTIFIER_CHARACTERS [a-z_]
-IGNORED_BUNCH [ \n\t]
+IGNORED_BUNCH [ \n]
 
 %s ML_COMMENT
 
