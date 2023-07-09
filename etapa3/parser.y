@@ -6,6 +6,7 @@
 int yylex(void);
 void yyerror (char const *s);
 extern int get_line_number();
+extern void *arvore;
 
 %}
 
@@ -40,7 +41,7 @@ extern int get_line_number();
 
 program
     :
-    | global_declarations { asd_print_graphviz($1); asd_free($1); }
+    | global_declarations { arvore = $1; }
     ;
 
 global_declarations

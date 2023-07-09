@@ -31,10 +31,6 @@ void asd_append_next(asd_tree_t *tree, asd_tree_t *next);
 /*
  * Função asd_print, imprime recursivamente a árvore.
  */
-void asd_print(asd_tree_t *tree);
+void exporta(asd_tree_t *tree);
 
-/*
- * Função asd_print_graphviz, idem, em formato DOT
- */
-void asd_print_graphviz (asd_tree_t *tree);
 #endif //_ARVORE_H_

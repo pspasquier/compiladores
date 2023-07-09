@@ -24,6 +24,7 @@ foo(bool a, int b, float c) -> float
 
 bar() -> bool
 {
+    int x <= 0;
     {
         x = 12;
         x = x + 1;
