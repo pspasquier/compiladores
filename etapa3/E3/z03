@@ -4,5 +4,5 @@ f()->int{
     int a;
     int b;
     int c;
-    g(a+b, a+b*c, b+c+a);
+    g(a, b, c);
 }
