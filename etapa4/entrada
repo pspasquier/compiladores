@@ -1,0 +1,15 @@
+g(int i, int j, int k)->int{
+    return 1;
+}
+int a, b, c, d;
+/*
+oe
+*/
+f()->int{
+    int a;
+    int b;
+    int c;
+    b = 3+a;
+    b = g;
+    g(a+b, a+b*c, b+c+a);
+}
